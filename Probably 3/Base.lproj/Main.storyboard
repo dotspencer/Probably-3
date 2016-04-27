@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Probably_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Es-a2-OTk">
+                                <rect key="frame" x="0.0" y="242" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.098814655172413793" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="KVP-bl-7Or"/>
+                                    <constraint firstAttribute="width" constant="115" id="hUc-FV-jh4"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <connections>
+                                    <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PpM-wa-AXG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIx-YG-0Go">
+                                <rect key="frame" x="225" y="71" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="UBo-oe-aRY"/>
+                                    <constraint firstAttribute="width" constant="150" id="xT6-pX-kUG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG5-0O-tzo">
+                                <rect key="frame" x="485" y="242" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.098814655170000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="VlY-SR-2nZ"/>
+                                    <constraint firstAttribute="width" constant="115" id="wvT-nK-VFg"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <connections>
+                                    <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="69M-Un-Tks"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Es-a2-OTk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="76t-Zq-9hx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IG5-0O-tzo" secondAttribute="trailing" constant="-20" id="KOI-4J-9qK"/>
+                            <constraint firstItem="IG5-0O-tzo" firstAttribute="bottom" secondItem="2Es-a2-OTk" secondAttribute="bottom" id="Zgf-YB-YnM"/>
+                            <constraint firstItem="2Es-a2-OTk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ikq-Gq-Pnz"/>
+                            <constraint firstItem="IIx-YG-0Go" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ofI-xk-PG4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="IIx-YG-0Go" id="Sxq-O9-QE8"/>
+                        <outletCollection property="buttons" destination="2Es-a2-OTk" collectionClass="NSMutableArray" id="vX3-O0-6Xv"/>
+                        <outletCollection property="buttons" destination="IG5-0O-tzo" collectionClass="NSMutableArray" id="e1W-Kp-Z16"/>
+                        <outletCollection property="dimensions" destination="KVP-bl-7Or" collectionClass="NSMutableArray" id="PB2-ej-1zl"/>
+                        <outletCollection property="dimensions" destination="hUc-FV-jh4" collectionClass="NSMutableArray" id="ciE-lC-twK"/>
+                        <outletCollection property="dimensions" destination="VlY-SR-2nZ" collectionClass="NSMutableArray" id="PLz-kx-JHj"/>
+                        <outletCollection property="dimensions" destination="wvT-nK-VFg" collectionClass="NSMutableArray" id="BBL-Kl-odc"/>
+                        <outletCollection property="dimensions" destination="UBo-oe-aRY" collectionClass="NSMutableArray" id="1Xh-YA-Dzb"/>
+                        <outletCollection property="dimensions" destination="xT6-pX-kUG" collectionClass="NSMutableArray" id="qrx-6T-S76"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="357"/>
+        </scene>
+    </scenes>
+</document>
