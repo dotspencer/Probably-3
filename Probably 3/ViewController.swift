@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var dimensions: [NSLayoutConstraint]!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var testLabel: UILabel!
     
-    var colors = [
+    let colors = [
         UIColor.clearColor(),
         UIColor.clearColor(),
         UIColor(red:0.11, green:0.69, blue:0.93, alpha:1.00), // 3
@@ -37,7 +38,10 @@ class ViewController: UIViewController {
         UIColor(red:0.42, green:0.49, blue:0.98, alpha:1.00) // 20
     ]
     
+    var data = NSUserDefaults.standardUserDefaults();
     var score: Int = 0
+    var scoresKey = "scoresKey"
+    let test = "test"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +54,8 @@ class ViewController: UIViewController {
     }
     
     func setup(){
-        let scores = Scoreboard()
-        scores.addNew(23, name: "Spence")
-        scores.addNew(19, name: "Brooke")
-        
-        scores.show()
-        scores.clear()
-        
+        testLabel.text = String(data.integerForKey(test))
+
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
         
@@ -85,6 +84,13 @@ class ViewController: UIViewController {
     }
     
     func updateScore(){
+        if(score > data.integerForKey(test)){
+            data.setInteger(score, forKey: test)
+        }
+        
+        testLabel.text = String(data.integerForKey(test))
+        testLabel.backgroundColor = colors[data.integerForKey(test) - 1]
+        
         if(score >= 3){
             scoreLabel.backgroundColor = colors[score - 1]
         } else{
