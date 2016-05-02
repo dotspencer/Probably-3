@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5BE444E91CD43966000E0FFC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE444E81CD43966000E0FFC /* SecondViewController.swift */; };
 		5BE444EB1CD43A1F000E0FFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE444EA1CD43A1F000E0FFC /* Constants.swift */; };
 		5BE444ED1CD7EC1C000E0FFC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE444EC1CD7EC1C000E0FFC /* Model.swift */; };
 		5BEFD5FC1CCFDFCA00509A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFD5FB1CCFDFCA00509A42 /* AppDelegate.swift */; };
-		5BEFD5FE1CCFDFCA00509A42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFD5FD1CCFDFCA00509A42 /* MainViewController.swift */; };
+		5BEFD5FE1CCFDFCA00509A42 /* vcMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFD5FD1CCFDFCA00509A42 /* vcMain.swift */; };
 		5BEFD6011CCFDFCA00509A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEFD5FF1CCFDFCA00509A42 /* Main.storyboard */; };
 		5BEFD6041CCFDFCA00509A42 /* Probably_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFD6021CCFDFCA00509A42 /* Probably_3.xcdatamodeld */; };
 		5BEFD6061CCFDFCA00509A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEFD6051CCFDFCA00509A42 /* Assets.xcassets */; };
@@ -38,12 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5BE444E81CD43966000E0FFC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5BE444EA1CD43A1F000E0FFC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		5BE444EC1CD7EC1C000E0FFC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../Model.swift; sourceTree = "<group>"; };
 		5BEFD5F81CCFDFCA00509A42 /* Probably 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Probably 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEFD5FB1CCFDFCA00509A42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BEFD5FD1CCFDFCA00509A42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5BEFD5FD1CCFDFCA00509A42 /* vcMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vcMain.swift; sourceTree = "<group>"; };
 		5BEFD6001CCFDFCA00509A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BEFD6031CCFDFCA00509A42 /* Probably_3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Probably_3.xcdatamodel; sourceTree = "<group>"; };
 		5BEFD6051CCFDFCA00509A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,10 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				5BEFD5FF1CCFDFCA00509A42 /* Main.storyboard */,
-				5BEFD5FD1CCFDFCA00509A42 /* MainViewController.swift */,
+				5BEFD5FD1CCFDFCA00509A42 /* vcMain.swift */,
 				5BE444EC1CD7EC1C000E0FFC /* Model.swift */,
 				5BE444EA1CD43A1F000E0FFC /* Constants.swift */,
-				5BE444E81CD43966000E0FFC /* SecondViewController.swift */,
 				5BEFD6051CCFDFCA00509A42 /* Assets.xcassets */,
 				5BEFD5FB1CCFDFCA00509A42 /* AppDelegate.swift */,
 				5BEFD6071CCFDFCA00509A42 /* LaunchScreen.storyboard */,
@@ -269,11 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BEFD5FE1CCFDFCA00509A42 /* MainViewController.swift in Sources */,
+				5BEFD5FE1CCFDFCA00509A42 /* vcMain.swift in Sources */,
 				5BEFD5FC1CCFDFCA00509A42 /* AppDelegate.swift in Sources */,
 				5BEFD6041CCFDFCA00509A42 /* Probably_3.xcdatamodeld in Sources */,
 				5BE444ED1CD7EC1C000E0FFC /* Model.swift in Sources */,
-				5BE444E91CD43966000E0FFC /* SecondViewController.swift in Sources */,
 				5BE444EB1CD43A1F000E0FFC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

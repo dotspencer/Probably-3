@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Scoreboard {
     var scores = [Record]()
@@ -21,17 +22,18 @@ class Scoreboard {
     /// Adds score to data and loads data into scores list,
     /// does nothing if the score alrady exists or if score is less than 3
     func add(score: Int, name: String){
-        if(!contains(score) && score > 2){
-            pullData()
-            
+        if(canBeAdded(score)){
             data[String(score)] = name
             saveData()
-            
             loadData()
-            
-            
             print("Score Added")
         }
+    }
+    
+    func canBeAdded(score: Int) -> Bool{
+        pullData()
+        loadData()
+        return !contains(score) && score > 2
     }
     
     /// Prints all scores out to the console

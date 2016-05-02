@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class vcMain: UIViewController {
     
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var dimensions: [NSLayoutConstraint]!
@@ -16,8 +16,10 @@ class MainViewController: UIViewController {
 
     var data = NSUserDefaults.standardUserDefaults();
     var scoreboard = Scoreboard()
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
+    var name = "do not add"
     var score: Int = 0 {
-        didSet {
+        didSet{
             updateLabels()
         }
     }
@@ -40,6 +42,21 @@ class MainViewController: UIViewController {
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = 2
         
+        alert.title = "New Highscore!"
+        alert.message = "Please enter your name:"
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+        }
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { (_) in
+            self.name = self.alert.textFields![0].text!
+            self.scoreboard.add(self.score, name: self.name)
+            self.score = 0
+        }
+        
+        alert.addAction(confirmAction)
+        
+        
+        
         scoreboard.show()
     }
 
@@ -51,9 +68,14 @@ class MainViewController: UIViewController {
     @IBAction func click(sender: UIButton) {
         if(sender.tag == Int(arc4random_uniform(2))){
             score += 1
+            return
+        }
+        
+        if(scoreboard.canBeAdded(score)){
+            self.presentViewController(alert, animated: true, completion: nil)
+            // setting of scoreboard moved to confirm action
         } else{
-            scoreboard.add(score, name: "spence")
-            score = 0
+            self.score = 0
         }
     }
     
