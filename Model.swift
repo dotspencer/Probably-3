@@ -11,8 +11,10 @@ import UIKit
 
 class Scoreboard {
     var scores = [Record]()
-    var userDefaults = NSUserDefaults.standardUserDefaults()
     var data = [String : String]() // ["score", "name"]
+    var count: Int {
+        return scores.count
+    }
     
     init(){
         pullData()
@@ -41,6 +43,26 @@ class Scoreboard {
         for score in scores{
             print("\(score.score)\t\(score.name)")
         }
+    }
+    
+    func toStringButFirst() -> String{
+        var output = ""
+        var once = true
+        for score in scores{
+            if(once){
+                once = false
+                continue
+            }
+            output += "\(score.score)\t\(score.name)\n"
+        }
+        return output
+    }
+    
+    func getHighest() -> Record?{
+        if(count < 1){
+            return nil
+        }
+        return scores[0]
     }
     
     /// Checks if score already exists for that integer

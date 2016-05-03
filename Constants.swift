@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+var userDefaults = NSUserDefaults.standardUserDefaults()
+
 let colors = [
     UIColor.clearColor(),
     UIColor.clearColor(),
@@ -35,4 +37,5 @@ let colors = [
 struct Keys{
     static let scores = "scores"
     static let data = "data"
+    static let taps = "taps"
 }

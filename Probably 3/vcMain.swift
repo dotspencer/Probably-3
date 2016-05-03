@@ -13,11 +13,13 @@ class vcMain: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var dimensions: [NSLayoutConstraint]!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var tapsLabel: UILabel!
 
     var data = NSUserDefaults.standardUserDefaults();
     var scoreboard = Scoreboard()
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
     var name = "do not add"
+    var taps = 0
     var score: Int = 0 {
         didSet{
             updateLabels()
@@ -55,8 +57,7 @@ class vcMain: UIViewController {
         
         alert.addAction(confirmAction)
         
-        
-        
+        loadTaps()
         scoreboard.show()
     }
 
@@ -66,6 +67,7 @@ class vcMain: UIViewController {
     }
     
     @IBAction func click(sender: UIButton) {
+        tap()
         if(sender.tag == Int(arc4random_uniform(2))){
             score += 1
             return
@@ -86,5 +88,22 @@ class vcMain: UIViewController {
             return
         }
         scoreLabel.backgroundColor = colors[score - 1]
+    }
+    
+    func tap(){
+        taps += 1
+        tapsLabel.text = String(taps)
+        
+        userDefaults.setInteger(taps, forKey: Keys.taps)
+    }
+    
+    func loadTaps(){
+        taps = userDefaults.integerForKey(Keys.taps)
+        tapsLabel.text = String(taps)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destView: vcSecond = segue.destinationViewController as! vcSecond
+        destView.scoreboard = scoreboard
     }
 }
